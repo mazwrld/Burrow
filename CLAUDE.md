@@ -50,3 +50,17 @@ The bama plugin has a skill for each step: `mac-design` (design rules),
 ## Git
 
 - Commit after each working change, with a message that says what the user can now do.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues for `mazwrld/Burrow`, via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: `docs/GLOSSARY.md` and `docs/adr/`. See `docs/agents/domain.md`.
