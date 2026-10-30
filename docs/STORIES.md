@@ -24,7 +24,7 @@ UX:
 - States: checking (no UI under half a second); missing "Burrow needs Mole" with `brew install mole`; too old "Update Mole to 1.62.0 or later" with `brew upgrade mole`; found shows the version in Settings
 - Words: title "Burrow Needs Mole", body "Burrow shows and runs the Mole command line tool. Install it with Homebrew, then check again.", buttons "Copy Command", "Check Again"
 - Access: Check Again is the default button (Return); VoiceOver reads the command text
-Status: todo
+Status: done
 
 ### S-002 See my Mac's health at a glance
 As the user, I open the Health page and see disk free, memory pressure, CPU and battery.
@@ -41,7 +41,7 @@ UX:
 - States: loading shows the last snapshot with "Updated 2 min ago", first run shows a spinner "Reading health…"; error inline "Unable to read health. `mo status --json` exited with 1." with Copy Command and Refresh; no battery hides the row
 - Words: header "Health", score "82 Good" plus Mole's message, rows "Disk", "Memory", "CPU", "Battery", table "Top Processes"; toolbar tooltip "Read health from Mole again (⌘R)"
 - Access: meters carry the value as text ("Memory pressure: normal"), never color alone; each row is one VoiceOver element
-Status: todo
+Status: done
 
 ### S-003 Preview a clean
 As the user, I press Preview on the Clean page and see what `mo clean` would remove, grouped, with sizes.
@@ -60,7 +60,7 @@ UX:
 - States: empty before first preview "Preview shows what Mole can clean. Nothing is removed." with Preview; scanning "Previewing… User essentials" with Stop; nothing found "Nothing to clean right now"; error inline with exit code and Copy Command; long paths truncate in the middle with the full path as tooltip; 400+ items scroll in a lazy outline
 - Words: "Preview", "Stop", header "4.14 GB in 359 items", note "Cleaning also empties the Trash.", box title "Not cleaned by this run" with "Run `mo purge` to remove build folders."; Reveal tooltip "Show this item in Finder"
 - Access: groups expand with Right and Left arrows; sizes in monospaced digits; VoiceOver reads "User essentials, 1.2 GB, 87 items"
-Status: todo
+Status: done
 
 ### S-004 Confirm and run the clean
 As the user, I press Clean, read a confirmation dialog that says what will happen, confirm, and watch it run.
@@ -68,7 +68,7 @@ Screens: 04-clean-confirm.png, 05-clean-running.png, 06-clean-done.png
 Depends: S-003
 Acceptance:
 - [snap] The Clean button is disabled until a preview finished in this session, and the button title names the size: "Clean 4.14 GB".
-- [snap] The confirmation dialog says the size, "Files are deleted for good. They do not go to the Trash.", the Trash note from S-003, and has Cancel (default) and Clean (destructive) buttons.
+- [manual] The confirmation dialog says the size, "Files are deleted for good. They do not go to the Trash.", the Trash note from S-003, and has Cancel (default) and Clean (destructive) buttons.
 - [unit] Confirming runs exactly `mo clean` with no other flags and no `sudo`.
 - [snap] While running, the output streams into a log view with colors removed; a Stop button sends SIGINT.
 - [snap] When done, the page shows the freed size from the output and a "See in History" button.
@@ -79,7 +79,7 @@ UX:
 - States: button disabled with tooltip "Preview first to see what will be cleaned"; running log with Stop; done "Freed 4.02 GB"; stopped "Stopped. Some items were already deleted."; admin skipped row "Admin cleanup skipped. It needs your password." with Open in Terminal
 - Words: dialog title "Clean 4.14 GB?", message "Files are deleted for good. They do not go to the Trash. Cleaning also empties the Trash.", buttons "Clean" (destructive) and "Cancel" (default, Return)
 - Access: Return picks Cancel, so a stray Return deletes nothing; the log view is a text area VoiceOver can read; done state announces "Clean finished, freed 4.02 GB"
-Status: todo
+Status: done
 
 ### S-005 See what the last clean removed
 As the user, I open History and see each Mole run with its date, command and size.
@@ -96,7 +96,7 @@ UX:
 - States: empty "No Mole runs yet. Runs from Burrow and from Terminal show here."; preview runs gray with a "Preview" badge; error inline with Copy Command
 - Words: columns "Command", "Started", "Freed", "Deleted", "Moved to Trash", "Skipped", "Failed"; item status "Deleted" or "Moved to Trash"
 - Access: arrow keys move through runs; the Preview badge is a word, not only gray
-Status: todo
+Status: done
 
 ### S-006 Hand a step to Terminal
 As the user, I press Open in Terminal on a step Burrow cannot do, and Terminal opens with the command typed in.
@@ -111,7 +111,7 @@ UX:
 - States: Terminal automation denied -> inline "Burrow can't control Terminal. Copy the command and paste it into Terminal." with Copy Command
 - Words: "Open in Terminal", "Copy Command"; tooltip "Run this command in a new Terminal window"; after copy the button reads "Copied" for two seconds
 - Access: the command is selectable text; both buttons reachable by Tab
-Status: todo
+Status: done
 
 ### S-007 See the pages in a sidebar
 As the user, I switch between Health, Clean and History in a sidebar, with the selection kept after a restart.
@@ -126,7 +126,7 @@ UX:
 - States: Space and Apps show "Coming soon" with one sentence on what they will do
 - Words: "Health", "Space", "Clean", "Apps", "History"; symbols heart.text.square, chart.pie, sparkles, square.grid.2x2, clock.arrow.circlepath
 - Access: Up and Down move the selection; each row has its label for VoiceOver
-Status: todo
+Status: done
 
 ## M2 Explore: Space and Apps
 

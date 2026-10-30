@@ -1,0 +1,49 @@
+
+[1;35mClean Your Mac[0m
+
+[0;33mDry Run Mode[0m, Preview only, no deletions
+
+[0;38;5;244m◎ System caches need sudo, run [0msudo -v && mo clean --dry-run[0;38;5;244m for full preview[0m
+
+⚙ Apple Silicon | Free space: 130.74GB
+
+[1;35m➤ User essentials[0m
+  [0;33m→[0m User app cache · 34 items, 2.04GB dry
+  [0;33m→[0m Trash · would empty, 2 items
+
+[1;35m➤ App caches[0m
+  [0;33m→[0m macOS Help system cache · 5 items, 48.6MB dry
+  [0;33m→[0m Maps geo tile cache · 7 items, 63.1MB dry
+
+[1;35m➤ Browsers[0m
+  [0;33m→[0m Chrome cache · 250.8MB dry
+  [0;33m→[0m Firefox cache · 188.0MB dry
+
+[1;35m➤ Developer tools[0m
+  [0;33m→[0m npm cache directory · 3 items, 337.2MB dry
+  [0;33m→[0m Homebrew cache · 8 items, 65.3MB dry
+
+[1;35m➤ Apps & utilities[0m
+  [0;33m→[0m ExampleApp logs · 9 items, 180KB dry
+
+[1;35m➤ Application Support[0m
+  [0;33m→[0m Application Support logs/caches · 72.8MB dry
+
+[1;35m➤ Device backups & firmware[0m
+  [0;32m✓[0m Nothing to clean
+
+[1;35m➤ Large files[0m
+  [0;33m⊙[0m Mail data · [0;32m2.42GB[0m · [0;38;5;244m~/Library/Mail[0m
+  [0;33m⊙[0m Simulator data · [0;32m12.93GB[0m · [0;38;5;244m~/Library/Developer/CoreSimulator/Devices[0m
+  [0;33m⊙[0m Docker storage · [0;38;5;244mImages 11.55GB (2.602GB (22%) reclaimable) · Build Cache 0B (0B reclaimable)[0m
+
+[1;35m➤ Project artifacts[0m
+  [0;33m⊙[0m Build artifacts · [0;32m8 dirs, 4.88GB+[0m · [0;38;5;244mmo purge[0m
+
+
+======================================================================
+[1;34mDry run complete - no changes made[0m
+Potential space: [0;31m4.14GB[0m | Items: 359 | Categories: 6
+Detailed file list: [0;38;5;244m/Users/test/.config/mole/clean-list.txt[0m
+Use [0;38;5;244mmo clean --whitelist[0m to add protection rules
+======================================================================

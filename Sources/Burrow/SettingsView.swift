@@ -54,11 +54,23 @@ enum SettingsTab: String, CaseIterable, Identifiable {
 }
 
 struct GeneralSettings: View {
-    @AppStorage("confirmDelete") private var confirmDelete = true
+    @Environment(AppModel.self) private var model
 
     var body: some View {
-        Section("Items") {
-            Toggle("Ask before deleting items", isOn: $confirmDelete)
+        Section("Mole") {
+            switch model.lookup {
+            case .ready(let path, let version):
+                LabeledContent("Version", value: version.description)
+                LabeledContent("Location") {
+                    Text(path).textSelection(.enabled).lineLimit(1).truncationMode(.middle).help(path)
+                }
+            case .checking:
+                LabeledContent("Version", value: "Checking…")
+            case .missing:
+                LabeledContent("Version", value: "Not found")
+            case .tooOld(let version):
+                LabeledContent("Version", value: "\(version), needs 1.62.0 or later")
+            }
         }
     }
 }

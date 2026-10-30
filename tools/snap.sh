@@ -1,14 +1,12 @@
 #!/bin/zsh
-# Snapshots of every page in light and dark, with seed data, on a fresh test store.
-# Usage: tools/snap.sh            all pages
-#        APP_SNAPSHOT_PAGES=all,settings tools/snap.sh
+# Snapshots of every page and state in light and dark, from fixture output (never the real Mole).
+# Usage: tools/snap.sh            all shots
+#        APP_SNAPSHOT_PAGES=01-health,settings tools/snap.sh
 set -u
+here=${0:A:h:h}
 app=~/Applications/Burrow.app/Contents/MacOS/Burrow
-store=/tmp/Burrow-test.store
 shots=/tmp/Burrow-shots
 # A crashed run leaves saved window state, and the next launch would wait on a "reopen windows?" alert.
 rm -rf ~/Library/Saved\ Application\ State/com.maz.burrow.savedState
-# Seed data only fills an empty store, so start from nothing.
-rm -f $store $store-shm $store-wal
 rm -rf $shots
-APP_STORE=$store APP_SEED=1 APP_SNAPSHOT=$shots $app
+APP_FIXTURES=$here/Tests/Fixtures APP_SNAPSHOT=$shots $app

@@ -1,0 +1,178 @@
+{
+ "collected_at": "2026-10-30T09:11:25.755325-05:00",
+ "host": "Example-Mac.local",
+ "platform": "darwin 27.2",
+ "uptime": "2d 23h",
+ "uptime_seconds": 258418,
+ "procs": 722,
+ "hardware": {
+  "model": "MacBook Pro",
+  "cpu_model": "Apple M1 Pro",
+  "total_ram": "16.0 GB",
+  "disk_size": "460.4 GB",
+  "os_version": "macOS 27.2",
+  "refresh_rate": ""
+ },
+ "health_score": 99,
+ "health_score_msg": "Excellent",
+ "cpu": {
+  "usage": 26.761971856691,
+  "per_core": [
+   99.65751102398508,
+   89.69175992013636,
+   9.965751103848715,
+   9.090909093314366,
+   0,
+   0,
+   9.09090909060843,
+   0
+  ],
+  "per_core_estimated": false,
+  "load1": 19.9140625,
+  "load5": 10.087890625,
+  "load15": 8.5625,
+  "core_count": 8,
+  "logical_cpu": 8,
+  "p_core_count": 6,
+  "e_core_count": 2
+ },
+ "gpu": [
+  {
+   "name": "Apple M1 Pro",
+   "usage": -1,
+   "memory_used": 0,
+   "memory_total": 0,
+   "core_count": 14,
+   "note": "sppci_vendor_Apple"
+  }
+ ],
+ "memory": {
+  "used": 12046532608,
+  "total": 17179869184,
+  "available": 5133336576,
+  "used_percent": 70.12004852294922,
+  "swap_used": 3875209216,
+  "swap_total": 4294967296,
+  "cached": 3940532224,
+  "pressure": ""
+ },
+ "disks": [
+  {
+   "mount": "/",
+   "device": "/dev/disk3s3s1",
+   "used": 346211790848,
+   "total": 494384795648,
+   "used_percent": 70.0288103306683,
+   "fstype": "apfs",
+   "external": false,
+   "smart_status": "verified"
+  }
+ ],
+ "trash_size": 0,
+ "trash_approx": false,
+ "disk_io": {
+  "read_rate": 0,
+  "write_rate": 0
+ },
+ "network": [
+  {
+   "name": "en0",
+   "rx_rate_mbs": 2.4,
+   "tx_rate_mbs": 0.3,
+   "ip": "192.0.2.10"
+  }
+ ],
+ "network_history": null,
+ "proxy": {
+  "enabled": false,
+  "type": "",
+  "host": ""
+ },
+ "batteries": [
+  {
+   "percent": 46,
+   "status": "charging",
+   "time_left": "",
+   "health": "Good",
+   "cycle_count": 174,
+   "capacity": 90
+  }
+ ],
+ "thermal": {
+  "cpu_temp": 0,
+  "gpu_temp": 0,
+  "battery_temp": 26.69,
+  "fan_speed": 0,
+  "fan_count": 0,
+  "system_power": 43.68,
+  "adapter_power": 45,
+  "battery_power": 28.907
+ },
+ "sensors": null,
+ "bluetooth": [
+  {
+   "name": "Headphones",
+   "connected": false,
+   "battery": ""
+  },
+  {
+   "name": "Keyboard",
+   "connected": true,
+   "battery": "80%"
+  }
+ ],
+ "top_processes": [
+  {
+   "pid": 2573,
+   "ppid": 1,
+   "name": "WindowServer",
+   "command": "WindowServer",
+   "cpu": 42.6,
+   "memory": 0.1,
+   "memory_bytes": 20561920
+  },
+  {
+   "pid": 83533,
+   "ppid": 46700,
+   "name": "Safari",
+   "command": "Safari",
+   "cpu": 40.3,
+   "memory": 3.6,
+   "memory_bytes": 614072320
+  },
+  {
+   "pid": 40258,
+   "ppid": 1,
+   "name": "kernel_task",
+   "command": "kernel_task",
+   "cpu": 21,
+   "memory": 0.4,
+   "memory_bytes": 77135872
+  },
+  {
+   "pid": 774,
+   "ppid": 1,
+   "name": "Finder",
+   "command": "Finder",
+   "cpu": 12.6,
+   "memory": 0.3,
+   "memory_bytes": 48660480
+  },
+  {
+   "pid": 8272,
+   "ppid": 8269,
+   "name": "mds_stores",
+   "command": "mds_stores",
+   "cpu": 11.3,
+   "memory": 0.1,
+   "memory_bytes": 21282816
+  }
+ ],
+ "process_collected_at": "2026-10-30T09:11:25.755325-05:00",
+ "process_stale": false,
+ "zombie_count": 0,
+ "zombie_parents": [],
+ "zombie_parents_complete": true,
+ "process_watch": null,
+ "process_alerts": []
+}

@@ -1,20 +1,18 @@
 import AppKit
-import SwiftData
 import SwiftUI
 
 // Burrow
-//   Burrow                      the app
-//   APP_STORE=<file> Burrow     use another database (tests, experiments)
-//   APP_SNAPSHOT=<dir> Burrow   save a PNG of every sidebar page and Settings tab in light and dark mode, then quit
-//   APP_SEED=1 Burrow           fill an empty /tmp store with sample items (tools/snap.sh)
-//   Burrow --selftest           run the self-test on a /tmp store and quit with 0 or 1 (tools/selftest.sh)
-//   APP_ACCENT=<id> Burrow      run with another accent from Theme.all (UI/Theme.swift)
-//   APP_GRID=1 Burrow           draw the 8 pt grid and the layout probes over the window
+//   Burrow                          the app; runs the real `mo`
+//   APP_FIXTURES=<dir> Burrow       read Mole output from fixture files instead (Tests/Fixtures); never runs `mo`
+//   APP_SNAPSHOT=<dir> Burrow       with APP_FIXTURES: save a PNG of every page and state in light and dark, then quit
+//   Burrow --selftest               with APP_FIXTURES: run the self-test and quit with 0 or 1 (tools/selftest.sh)
+//   APP_ACCENT=<id> Burrow          run with another accent from Theme.all (UI/Theme.swift)
+//   APP_GRID=1 Burrow               draw the grid and the layout probes over the window
 
 @main
 struct BurrowApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var delegate
-    @State private var model = AppModel(container: Store.makeContainer())
+    @State private var model = AppModel(mole: Mole.fromEnvironment())
 
     var body: some Scene {
         Window("Burrow", id: "main") {
@@ -24,15 +22,26 @@ struct BurrowApp: App {
                 .overlay { if GridOverlay.enabled { GridOverlay() } }
                 .frame(minWidth: 760, minHeight: 480)
         }
-        .modelContainer(model.container)
         .defaultSize(width: 1100, height: 720)
         .windowToolbarStyle(.unified)
         .commands {
             SidebarCommands()
             ToolbarCommands()
-            CommandGroup(replacing: .newItem) {
-                Button("New Item") { model.addItem() }
-                    .keyboardShortcut("n")
+            CommandGroup(replacing: .newItem) {}
+            CommandMenu("Clean") {
+                Button("Preview") { model.page = .clean; model.clean.runPreview() }
+                    .keyboardShortcut("p", modifiers: [.command, .shift])
+                    .disabled(!model.isReady || model.clean.isBusy)
+            }
+            CommandGroup(after: .toolbar) {
+                Button("Refresh") { model.refresh() }
+                    .keyboardShortcut("r")
+                    .disabled(!model.isReady)
+                Divider()
+                ForEach(Page.allCases) { page in
+                    Button(page.title) { model.page = page }
+                        .keyboardShortcut(page.shortcut)
+                }
             }
         }
 
@@ -57,30 +66,5 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     /// The self-test's result becomes the exit code, after a normal quit.
     func applicationWillTerminate(_ notification: Notification) {
         if SelfTest.requested { exit(SelfTest.exitCode) }
-    }
-}
-
-/// Where the data lives: ~/Library/Application Support/Burrow/Burrow.store
-enum Store {
-    /// True when APP_STORE points somewhere else (tests, snapshots, seed data).
-    static var isOverridden: Bool {
-        !(ProcessInfo.processInfo.environment["APP_STORE"] ?? "").isEmpty
-    }
-
-    static var url: URL {
-        if let path = ProcessInfo.processInfo.environment["APP_STORE"], !path.isEmpty {
-            return URL(fileURLWithPath: path)
-        }
-        let dir = URL.applicationSupportDirectory.appending(path: "Burrow", directoryHint: .isDirectory)
-        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
-        return dir.appending(path: "Burrow.store")
-    }
-
-    static func makeContainer() -> ModelContainer {
-        do {
-            return try ModelContainer(for: Item.self, configurations: ModelConfiguration(url: url))
-        } catch {
-            fatalError("Could not open the database at \(url.path): \(error)")
-        }
     }
 }

@@ -1,0 +1,23 @@
+Clean Your Mac
+
+
+Running in non-interactive mode
+  → System-level cleanup skipped, requires sudo
+  → User-level cleanup will proceed automatically
+
+➤ User essentials
+  ✓ User app cache 1.21GB
+  ✓ Trash 312.4MB
+
+➤ Browsers
+  ✓ Chrome cache 650.2MB
+
+➤ Developer tools
+  ✓ Homebrew cache 111.0MB
+  ✓ npm cache 1.74GB
+
+======================================================================
+Cleanup complete
+Tracked cleanup: 4.02GB | Items cleaned: 310
+Free space: 134.76GB (+4.02GB)
+======================================================================

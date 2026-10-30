@@ -31,6 +31,7 @@ One name per idea. Buttons, menus, titles, tooltips and errors use these words.
 | Open in Terminal | Start a Mole command in a new Terminal window | Run in Terminal, Launch |
 | Copy Command | Copy the exact Mole command | Copy |
 | Reveal in Finder | Show an item in Finder | Open, Show |
+| Try Again | Run a Mole command that failed again | Retry |
 | Check Again | Look for Mole again on the setup page | Retry, Reload |
 | Deleted | Removed for good | Removed, Cleaned (as a result) |
 | Moved to Trash | Removed but recoverable from the Trash | Trashed |

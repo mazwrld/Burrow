@@ -1,0 +1,374 @@
+{
+  "logs": {"operations": "/Users/test/Library/Logs/mole/operations.log", "deletions": "/Users/test/Library/Logs/mole/deletions.log"},
+  "limit": 30,
+  "sessions": [
+    {
+      "command": "clean-dry-run",
+      "run_id": "20261030090809-97342-29814-20619",
+      "attribution": "run",
+      "started_at": "2026-10-30 09:08:09",
+      "ended_at": "2026-10-30 09:08:58",
+      "items": 359,
+      "size": "4.14GB",
+      "operation_count": 149,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 0, "skipped": 149, "failed": 0, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "analyze",
+      "run_id": "20261027084402-57709-10401-14696",
+      "attribution": "run",
+      "started_at": "2026-10-27 08:44:02",
+      "ended_at": "2026-10-27 08:44:02",
+      "items": 4,
+      "size": "644.3MB",
+      "operation_count": 4,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 4, "skipped": 0, "failed": 0, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "analyze",
+      "run_id": "20261027084349-57709-26791-3394",
+      "attribution": "run",
+      "started_at": "2026-10-27 08:43:49",
+      "ended_at": "2026-10-27 08:43:50",
+      "items": 30,
+      "size": "17.53GB",
+      "operation_count": 30,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 30, "skipped": 0, "failed": 0, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "clean",
+      "run_id": "20261027083501-43398-26737-30359",
+      "attribution": "run",
+      "started_at": "2026-10-27 08:35:01",
+      "ended_at": "2026-10-27 08:36:46",
+      "items": 156,
+      "size": "1.32GB",
+      "operation_count": 433,
+      "failed_tasks": 0,
+      "actions": {"removed": 249, "trashed": 0, "skipped": 182, "failed": 2, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "clean",
+      "run_id": "20261026131900-593-23251-24132",
+      "attribution": "run",
+      "started_at": "2026-10-26 13:19:00",
+      "ended_at": "2026-10-26 13:20:25",
+      "items": 47,
+      "size": "575.8MB",
+      "operation_count": 271,
+      "failed_tasks": 0,
+      "actions": {"removed": 77, "trashed": 0, "skipped": 193, "failed": 1, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "update",
+      "run_id": "",
+      "attribution": "command",
+      "started_at": "2026-10-26 13:18:34",
+      "ended_at": "",
+      "items": 0,
+      "size": "0B",
+      "operation_count": 1,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 0, "skipped": 0, "failed": 0, "rebuilt": 1, "other": 0}
+    },
+    {
+      "command": "clean",
+      "run_id": "20261026125305-67243-23203-11921",
+      "attribution": "run",
+      "started_at": "2026-10-26 12:53:05",
+      "ended_at": "2026-10-26 12:57:01",
+      "items": 581,
+      "size": "9.12GB",
+      "operation_count": 1057,
+      "failed_tasks": 0,
+      "actions": {"removed": 846, "trashed": 0, "skipped": 210, "failed": 1, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "uninstall",
+      "run_id": "20261021084957-13024-28010-20398",
+      "attribution": "run",
+      "started_at": "2026-10-21 08:49:57",
+      "ended_at": "2026-10-21 08:51:58",
+      "items": 3,
+      "size": "2.03GB",
+      "operation_count": 6,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 5, "skipped": 1, "failed": 0, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "optimize",
+      "run_id": "20261021082341-78843-1341-23249",
+      "attribution": "run",
+      "started_at": "2026-10-21 08:23:41",
+      "ended_at": "2026-10-21 08:23:57",
+      "items": 1,
+      "size": "0B",
+      "operation_count": 1,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 0, "skipped": 0, "failed": 0, "rebuilt": 1, "other": 0}
+    },
+    {
+      "command": "clean",
+      "run_id": "20261021080208-13908-27332-8415",
+      "attribution": "run",
+      "started_at": "2026-10-21 08:02:08",
+      "ended_at": "2026-10-21 08:07:57",
+      "items": 1870,
+      "size": "29.98GB",
+      "operation_count": 2930,
+      "failed_tasks": 0,
+      "actions": {"removed": 2706, "trashed": 0, "skipped": 220, "failed": 4, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "uninstall",
+      "run_id": "",
+      "attribution": "command",
+      "started_at": "2026-10-06 10:01:24",
+      "ended_at": "2026-10-06 10:54:46",
+      "items": 1,
+      "size": "334.6MB",
+      "operation_count": 1,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 1, "skipped": 0, "failed": 0, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "uninstall",
+      "run_id": "",
+      "attribution": "command",
+      "started_at": "2026-10-06 09:53:38",
+      "ended_at": "2026-10-06 09:55:29",
+      "items": 2,
+      "size": "1.12GB",
+      "operation_count": 2,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 2, "skipped": 0, "failed": 0, "rebuilt": 0, "other": 0}
+    },
+    {
+      "command": "uninstall",
+      "run_id": "",
+      "attribution": "command",
+      "started_at": "2026-09-17 15:23:47",
+      "ended_at": "2026-09-17 15:24:37",
+      "items": 1,
+      "size": "0B",
+      "operation_count": 5,
+      "failed_tasks": 0,
+      "actions": {"removed": 0, "trashed": 5, "skipped": 0, "failed": 0, "rebuilt": 0, "other": 0}
+    }
+  ],
+  "deletions": [
+    {
+      "timestamp": "2026-10-27T08:44:02-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 127063,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/8C31B06F-91A4-4F7C-93ED-56146D7F48B9.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:44:02-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 152275,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/149E7795-DBDA-4F5D-B39A-14712F841118.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:44:02-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 158172,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/E5DB138A-F04E-4619-B896-DE5CB538C534.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:44:02-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 191697,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/537A4DAB-83B0-4B66-BCD1-05E5DBB4A268.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:50-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 441430,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/52ACB9B8-75FC-4516-BC60-4550CFF3B661.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:50-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 605089,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/15A8BC97-45AC-45DC-9AF9-313808C578BC.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:50-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 627790,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/3954A7C4-51EC-4ABC-ABA3-6757AC91C7CF.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 203158,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/35693AEA-F8C4-4A80-B77D-C94B20A68956.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 320858,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/DD47D8E1-CB66-4C12-BFEA-2ADB0D8D1E2E.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 820532,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/B13D40FC-C033-436D-A197-185900EC3552.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 908744,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/9C77AC8C-B23D-4ED9-ABD5-73D3CAD38317.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 226621,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/A63179A7-BC32-4307-89F0-112694889A03.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 350979,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/CE9B5D5B-B6E7-47C5-8C04-59BF182E98FB.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 456094,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/4C108785-A7BA-422E-9C79-B0129F1D5550.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 752478,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/B6461ECC-44F5-4BC9-877F-484A605D0D10.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 796845,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/8A57476A-E177-4AAD-B317-643F681584E1.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 893861,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/D7950C0A-27B9-4034-AB5B-EDB89D41341A.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 1072959,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/20633C28-FF90-4C54-B828-BB7F1669F7B4.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 594089,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/4207734D-74FE-4F92-B5E1-6EC8DEE24A15.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 944813,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/DAD82DCE-F3AE-4AEC-8A79-1694D412FC0A.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 324785,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/F07CC61B-30FC-4614-BDAD-3240B61F6793.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 373488,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/2F72BC1E-3D76-456C-81EB-842EBA488C27.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 442224,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/B2FC91ED-6891-4DEB-85A1-268B2B4160B6.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 438666,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/CF6347E2-4F81-4410-8892-4830991B6C5A.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 1067188,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/8A51AAE4-6ED6-432B-A222-4081D1F29D24.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 262677,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/44166C39-8566-4ECA-BD16-43159429B52F.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 299404,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/C3C48B18-E4AE-4A62-877D-0B0D74CDC9E0.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 430757,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/001C94AE-2BA4-4E77-A202-F7DE60E8B1C8.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 464085,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/6D6834A4-2F0F-479A-B053-7D4DC5CB8EB7.mov"
+    },
+    {
+      "timestamp": "2026-10-27T08:43:49-0500",
+      "mode": "trash",
+      "status": "ok",
+      "size_kb": 712419,
+      "path": "/Users/test/Library/Application Support/com.apple.wallpaper/aerials/videos/E334A6D2-7145-47C8-9B00-C20DED08B2D5.mov"
+    }
+  ]
+}

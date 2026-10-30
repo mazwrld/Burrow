@@ -1,4 +1,3 @@
-import SwiftData
 import SwiftUI
 
 struct ContentView: View {
@@ -6,86 +5,63 @@ struct ContentView: View {
     @Environment(\.openSettings) private var openSettings
 
     var body: some View {
-        NavigationSplitView {
-            sidebar
-        } content: {
-            ItemList(page: model.sidebar ?? .all)
-                .navigationSplitViewColumnWidth(min: 260, ideal: 320)
-        } detail: {
-            ItemDetail()
+        Group {
+            switch model.lookup {
+            case .ready: split
+            case .checking: Color.clear
+            case .missing, .tooOld: SetupView()
+            }
         }
         .task {
-            SeedData.insertIfRequested(into: model)
+            await model.locate()
             SelfTest.runIfRequested(model: model)
             Snapshot.runIfRequested(model: model, openSettings: openSettings)
         }
     }
 
-    private var sidebar: some View {
+    private var split: some View {
         @Bindable var model = model
-        return List(SidebarItem.allCases, selection: $model.sidebar) { page in
-            Label(page.title, systemImage: page.symbol)
-                .tag(page)
+        return NavigationSplitView {
+            List(Page.allCases, selection: Binding($model.page)) { page in
+                Label(page.title, systemImage: page.symbol)
+                    .tag(page)
+            }
+            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
+        } detail: {
+            page
         }
-        .navigationSplitViewColumnWidth(min: 180, ideal: 212)
+        .onChange(of: model.page) { model.refresh() }
+    }
+
+    @ViewBuilder
+    private var page: some View {
+        switch model.page {
+        case .health: HealthView()
+        case .clean: CleanView()
+        case .history: HistoryView()
+        case .space, .apps: ComingSoonView(page: model.page)
+        }
     }
 }
 
-struct ItemList: View {
-    @Environment(AppModel.self) private var model
-    @Environment(\.modelContext) private var context
-    @Query(sort: \Item.createdAt, order: .reverse) private var items: [Item]
-    let page: SidebarItem
-
-    private var visible: [Item] {
-        page == .starred ? items.filter(\.isStarred) : items
+private extension Binding where Value == Page? {
+    /// The sidebar List wants an optional selection; the model always has a page.
+    init(_ page: Binding<Page>) {
+        self.init(get: { page.wrappedValue }, set: { if let new = $0 { page.wrappedValue = new } })
     }
+}
+
+struct ComingSoonView: View {
+    let page: Page
 
     var body: some View {
-        @Bindable var model = model
-        List(visible, selection: $model.selection) { item in
-            Label(item.title, systemImage: item.isStarred ? "star.fill" : "circle")
-                .tag(item.id)
-                .contextMenu {
-                    Button("Delete", role: .destructive) { context.delete(item) }
-                }
-        }
-        .overlay {
-            if visible.isEmpty {
-                ContentUnavailableView(
-                    "No Items",
-                    systemImage: page.symbol,
-                    description: Text("Press Command-N to add one.")
-                )
-            }
+        ContentUnavailableView {
+            Label(page.title, systemImage: page.symbol)
+        } description: {
+            Text(page == .space
+                 ? "Coming soon: see what uses your disk and which folders Mole knows are caches."
+                 : "Coming soon: see your apps by size and preview what an uninstall removes.")
         }
         .navigationTitle(page.title)
-        .toolbar {
-            ToolbarItem {
-                Button("New Item", systemImage: "plus") { model.addItem() }
-                    .help("Add an item (Command-N)")
-            }
-        }
-    }
-}
-
-struct ItemDetail: View {
-    @Environment(AppModel.self) private var model
-    @Query private var items: [Item]
-
-    var body: some View {
-        if let item = items.first(where: { $0.id == model.selection }) {
-            @Bindable var item = item
-            Form {
-                TextField("Title", text: $item.title)
-                Toggle("Starred", isOn: $item.isStarred)
-                TextField("Notes", text: $item.notes, axis: .vertical)
-                    .lineLimit(4...)
-            }
-            .formStyle(.grouped)
-            } else {
-            ContentUnavailableView("No Selection", systemImage: "sidebar.right")
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                }
     }
 }
