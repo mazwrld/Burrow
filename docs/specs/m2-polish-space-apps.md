@@ -1,6 +1,6 @@
 # Spec: Polish the look, add the icon, then Space and Apps (M2)
 
-Status: ready-for-agent (local file; no issue tracker is set up for Burrow yet)
+Status: ready-for-agent, published as https://github.com/mazwrld/Burrow/issues/1
 Date: 2026-10-30
 Reads: `docs/BRIEF.md`, `docs/STORIES.md` (S-008 to S-012), `docs/GLOSSARY.md`
 
