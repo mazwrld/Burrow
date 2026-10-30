@@ -72,7 +72,7 @@ struct Mole: Sendable {
             ?? URL(fileURLWithPath: NSHomeDirectory()).appending(path: ".config/mole/clean-list.txt")
     }
 
-    /// The home folder the list paths start with (the fixtures were captured on /Users/test).
+    /// The home folder the list paths start with (the fixtures use /Users/test).
     var home: String { isFixture ? "/Users/test" : NSHomeDirectory() }
 
     /// Opens a new Terminal window that runs the command. A `.command` file
