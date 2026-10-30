@@ -144,3 +144,25 @@ private final class LockedLines: @unchecked Sendable {
     #expect(lines.all.contains { $0.contains("➤ Large files") })
     #expect(lines.all.compactMap { CleanOutput.section(of: Substring($0)) }.contains("Large files"))
 }
+
+@Test func concurrentRunsKeepTheirOwnOutput() async throws {
+    let url = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+        .deletingLastPathComponent().appending(path: "Fixtures/clean-run.txt")
+    let expected = try String(contentsOf: url, encoding: .utf8)
+    let clock = ContinuousClock()
+    let start = clock.now
+    try await withThrowingTaskGroup(of: (String, Duration).self) { group in
+        for _ in 0..<40 {
+            group.addTask {
+                let t = clock.now
+                let r = try await MoleProcess(executable: "/bin/cat", arguments: [url.path]).run()
+                return (r.output, clock.now - t)
+            }
+        }
+        for try await (output, took) in group {
+            #expect(output == expected)
+            #expect(took < .seconds(3), "one run took \(took)")
+        }
+    }
+    #expect(clock.now - start < .seconds(10))
+}

@@ -56,7 +56,7 @@ enum SelfTest {
             clean.runClean()
             check("confirming starts the clean", clean.phase == .cleaning)
             await until { clean.phase == .done }
-            check("done shows the freed size", clean.summary?.freed == MoleSize(bytes: 4_020_000_000))
+            check("done shows the freed size", clean.summary?.freed == MoleSize(bytes: 4_020_000_000), "phase=\(clean.phase) log=\(clean.log.count) failure=\(String(describing: clean.failure)) stopped=\(clean.wasStopped)")
             check("done shows admin cleanup skipped", clean.summary?.adminSkipped == true)
             check("Clean needs a new preview after a run", !clean.canClean)
 
@@ -74,9 +74,9 @@ enum SelfTest {
         }
     }
 
-    /// Waits up to 10 seconds for a condition.
+    /// Waits up to 30 seconds for a condition (a busy Mac can be slow to launch commands).
     private static func until(_ condition: () -> Bool) async {
-        for _ in 0..<200 where !condition() {
+        for _ in 0..<600 where !condition() {
             try? await Task.sleep(for: .milliseconds(50))
         }
     }

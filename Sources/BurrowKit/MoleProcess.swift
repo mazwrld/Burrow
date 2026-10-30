@@ -37,8 +37,8 @@ public final class MoleProcess: @unchecked Sendable {
 
         let collector = LineCollector(onLine: onLine)
         try process.run()
-        // Our copy of the write end must close, or the read below never sees the end.
-        try? pipe.fileHandleForWriting.close()
+        // Process closes the parent's copy of the write end itself. Closing it
+        // again here could close a reused descriptor of another running command.
         let reader = pipe.fileHandleForReading
         let process = process
         // Read to the end of the output first, then wait for the exit code:
